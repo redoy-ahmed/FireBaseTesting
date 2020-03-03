@@ -7,6 +7,8 @@ public class OfferAvailability {
     private Integer slabNo;
     private int threshold;
 
+
+
     public String getOfferInfo() {
         return offerInfo;
     }
