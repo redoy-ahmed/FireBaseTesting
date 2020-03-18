@@ -1,71 +1,171 @@
 package com.fcmtest.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+import java.util.List;
+
 public class Notification {
 
-    private String notificationType;
-    private String caption;
-    private String message;
-    private String imageURL;
-    private String pageLink;
-    private SKU sku;
+    private int NotificationID;
+    private String NotificationName;
+    private String NotificationGenerationType;
+    private String NotificationType;
+    private String StartDate;
+    private String EndDate;
+    private String Caption;
+    private String Message;
+    private String ImagePath;
+    private String PageLink;
+    private List<Integer> SkuIds;
+    private List<Integer> TpIds;
+    private List<String> Times;
+    private List<SurveyAnswer> SurveyAnswers;
 
     public Notification() {
     }
 
-    public Notification(String notificationType, String caption, String message, String imageURL, String pageLink, SKU sku) {
-        this.notificationType = notificationType;
-        this.caption = caption;
-        this.message = message;
-        this.imageURL = imageURL;
-        this.pageLink = pageLink;
-        this.sku = sku;
+    public Notification(int NotificationID, String NotificationName, String NotificationGenerationType, String NotificationType, String StartDate, String EndDate, String Caption, String Message, String ImagePath, String PageLink, List<Integer> SkuIds, List<Integer> TpIds, List<String> Times, List<SurveyAnswer> SurveyAnswers) {
+        this.NotificationID = NotificationID;
+        this.NotificationName = NotificationName;
+        this.NotificationGenerationType = NotificationGenerationType;
+        this.NotificationType = NotificationType;
+        this.StartDate = StartDate;
+        this.EndDate = EndDate;
+        this.Caption = Caption;
+        this.Message = Message;
+        this.ImagePath = ImagePath;
+        this.PageLink = PageLink;
+        this.SkuIds = SkuIds;
+        this.TpIds = TpIds;
+        this.Times = Times;
+        this.SurveyAnswers = SurveyAnswers;
+    }
+
+    public int getNotificationID() {
+        return NotificationID;
+    }
+
+    @JsonProperty("NotificationID")
+    public void setNotificationID(int NotificationID) {
+        this.NotificationID = NotificationID;
+    }
+
+    public String getNotificationName() {
+        return NotificationName;
+    }
+
+    @JsonProperty("NotificationName")
+    public void setNotificationName(String NotificationName) {
+        this.NotificationName = NotificationName;
+    }
+
+    public String getNotificationGenerationType() {
+        return NotificationGenerationType;
+    }
+
+    @JsonProperty("NotificationGenerationType")
+    public void setNotificationGenerationType(String NotificationGenerationType) {
+        this.NotificationGenerationType = NotificationGenerationType;
     }
 
     public String getNotificationType() {
-        return notificationType;
+        return NotificationType;
     }
 
-    public void setNotificationType(String notificationType) {
-        this.notificationType = notificationType;
+    @JsonProperty("NotificationType")
+    public void setNotificationType(String NotificationType) {
+        this.NotificationType = NotificationType;
+    }
+
+    public String getStartDate() {
+        return StartDate;
+    }
+
+    @JsonProperty("StartDate")
+    public void setStartDate(String StartDate) {
+        this.StartDate = StartDate;
+    }
+
+    public String getEndDate() {
+        return EndDate;
+    }
+
+    @JsonProperty("EndDate")
+    public void setEndDate(String EndDate) {
+        this.EndDate = EndDate;
     }
 
     public String getCaption() {
-        return caption;
+        return Caption;
     }
 
-    public void setCaption(String caption) {
-        this.caption = caption;
+    @JsonProperty("Caption")
+    public void setCaption(String Caption) {
+        this.Caption = Caption;
     }
 
     public String getMessage() {
-        return message;
+        return Message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    @JsonProperty("Message")
+    public void setMessage(String Message) {
+        this.Message = Message;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public String getImagePath() {
+        return ImagePath;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    @JsonProperty("ImagePath")
+    public void setImagePath(String ImagePath) {
+        this.ImagePath = ImagePath;
     }
 
     public String getPageLink() {
-        return pageLink;
+        return PageLink;
     }
 
-    public void setPageLink(String pageLink) {
-        this.pageLink = pageLink;
+    @JsonProperty("PageLink")
+    public void setPageLink(String PageLink) {
+        this.PageLink = PageLink;
     }
 
-    public SKU getSku() {
-        return sku;
+    public List<Integer> getSkuIds() {
+        return SkuIds;
     }
 
-    public void setSku(SKU sku) {
-        this.sku = sku;
+    @JsonProperty("SkuIds")
+    public void setSkuIds(List<Integer> SkuIds) {
+        this.SkuIds = SkuIds;
+    }
+
+    public List<Integer> getTpIds() {
+        return TpIds;
+    }
+
+    @JsonProperty("TpIds")
+    public void setTpIds(List<Integer> TpIds) {
+        this.TpIds = TpIds;
+    }
+
+    public List<String> getTimes() {
+        return Times;
+    }
+
+    @JsonProperty("Times")
+    public void setTimes(List<String> Times) {
+        this.Times = Times;
+    }
+
+    public List<SurveyAnswer> getSurveyAnswers() {
+        return SurveyAnswers;
+    }
+
+    @JsonProperty("SurveyAnswerList")
+    public void setSurveyAnswers(List<SurveyAnswer> SurveyAnswers) {
+        this.SurveyAnswers = SurveyAnswers;
     }
 }
