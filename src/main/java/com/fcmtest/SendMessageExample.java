@@ -15,17 +15,18 @@ public class SendMessageExample {
 
         EntityMessage msg = new EntityMessage();
 
-        msg.addRegistrationToken("f5sWjxCbsTs:APA91bGt9nofS8E52XoGz8TitAv95pjRwhQMa4nz2ksWbxOuST6KzCNe1k6HD2eYfmJSOScSbXvUN49sd0vC8o2xgDm4Ri1ZpsI5lFFts2CNQmQKKl-s5RgM155NvP2aV09pTN4qbdT5");
+        msg.addRegistrationToken("f811tsZYbEI:APA91bEngVTPV2VddWEliEXuNiiNKtuGG4VgmM9VW0ZyDlRuC_TU6YCzekjAwObUARsYWfKmn_tApvO8GcA8kfEJmrZyM1L1NLmSnuIj5gL3HbLdS9t6PhKSq7t5k13IwaHl56yQqbPZ");
 
         List<Integer> skuIDs = new ArrayList<>();
         List<Integer> tpIDs = new ArrayList<>();
         List<String> times = new ArrayList<>();
         List<SurveyAnswer> surveyAnswerList = new ArrayList<>();
 
-
         Notification notification = new Notification();
 
-        notification.setNotificationID(1);
+
+       /* //Order status notification
+        notification.setNotificationID(AppUtil.OrderConfirmNotification);
         notification.setNotificationName("OrderConfirmNotification");
         notification.setNotificationGenerationType("Auto");
         notification.setNotificationType("Push");
@@ -35,6 +36,55 @@ public class SendMessageExample {
         notification.setMessage("Order confirmed with order no D03-200309-0001 and order value 1185.25.");
         notification.setImagePath("http://www.1face1.com/ht/wp-content/uploads/2017/10/order-online-21-21.png");
         notification.setPageLink("1");
+        notification.setSkuIds(skuIDs);
+        notification.setTpIds(tpIDs);
+        notification.setTimes(times);
+        notification.setSurveyAnswers(surveyAnswerList);*/
+
+
+        //Survey notification
+        SurveyAnswer surveyAnswer = new SurveyAnswer();
+        surveyAnswer.setId(1);
+        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setAnswer("Clear Men");
+        surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
+
+        surveyAnswerList.add(surveyAnswer);
+
+        surveyAnswer = new SurveyAnswer();
+        surveyAnswer.setId(2);
+        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setAnswer("Clear Hairfall");
+        surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
+
+        surveyAnswerList.add(surveyAnswer);
+
+        surveyAnswer = new SurveyAnswer();
+        surveyAnswer.setId(3);
+        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setAnswer("Sunsilk Hairfall");
+        surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
+
+        surveyAnswerList.add(surveyAnswer);
+
+        surveyAnswer = new SurveyAnswer();
+        surveyAnswer.setId(4);
+        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setAnswer("Sunsilk");
+        surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
+
+        surveyAnswerList.add(surveyAnswer);
+
+        notification.setNotificationID(AppUtil.SurveyNotification);
+        notification.setNotificationName("SurveyNotification");
+        notification.setNotificationGenerationType("Auto");
+        notification.setNotificationType("InApp");
+        notification.setStartDate("2020-03-01T00:00:00");
+        notification.setEndDate("2020-03-01T00:00:00");
+        notification.setCaption("Choose the best One");
+        notification.setMessage("Which shampoo do you use daily?");
+        notification.setImagePath("http://www.1face1.com/ht/wp-content/uploads/2017/10/order-online-21-21.png");
+        notification.setPageLink("2");
         notification.setSkuIds(skuIDs);
         notification.setTpIds(tpIDs);
         notification.setTimes(times);

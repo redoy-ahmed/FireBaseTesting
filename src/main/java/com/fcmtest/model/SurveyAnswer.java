@@ -7,8 +7,6 @@ public class SurveyAnswer {
     private String answer;
     private String answerImagePath;
 
-    private int isSelected;
-
     public SurveyAnswer() {
     }
 
@@ -42,13 +40,5 @@ public class SurveyAnswer {
 
     public void setAnswerImagePath(String answerImagePath) {
         this.answerImagePath = answerImagePath;
-    }
-
-    public int getIsSelected() {
-        return isSelected;
-    }
-
-    public void setIsSelected(int isSelected) {
-        this.isSelected = isSelected;
     }
 }
