@@ -15,7 +15,7 @@ public class SendMessageExample {
 
         EntityMessage msg = new EntityMessage();
 
-        msg.addRegistrationToken("f811tsZYbEI:APA91bEngVTPV2VddWEliEXuNiiNKtuGG4VgmM9VW0ZyDlRuC_TU6YCzekjAwObUARsYWfKmn_tApvO8GcA8kfEJmrZyM1L1NLmSnuIj5gL3HbLdS9t6PhKSq7t5k13IwaHl56yQqbPZ");
+        msg.addRegistrationToken("e6_9Wdj3_9k:APA91bGsmT3at-_UklvEocm0yUU9hnsa3BvRopovi2jTEtAmhp7DtcbLnLB21j-xJ6mggIuNJKd2xnjSsonYiIMU_jwt0vM9lQk9i2P025NWhT87WAjwHw_T2PUSg2hpgOHWB5KaifGn");
 
         List<Integer> skuIDs = new ArrayList<>();
         List<Integer> tpIDs = new ArrayList<>();
@@ -23,9 +23,9 @@ public class SendMessageExample {
         List<SurveyAnswer> surveyAnswerList = new ArrayList<>();
 
         Notification notification = new Notification();
+        notification.setNotificationUniqueID(1);
 
-
-       /* //Order status notification
+       /*//Order status notification
         notification.setNotificationID(AppUtil.OrderConfirmNotification);
         notification.setNotificationName("OrderConfirmNotification");
         notification.setNotificationGenerationType("Auto");
@@ -45,7 +45,7 @@ public class SendMessageExample {
         //Survey notification
         SurveyAnswer surveyAnswer = new SurveyAnswer();
         surveyAnswer.setId(1);
-        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setNotificationUniqueID(notification.getNotificationUniqueID());
         surveyAnswer.setAnswer("Clear Men");
         surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
 
@@ -53,7 +53,7 @@ public class SendMessageExample {
 
         surveyAnswer = new SurveyAnswer();
         surveyAnswer.setId(2);
-        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setNotificationUniqueID(notification.getNotificationUniqueID());
         surveyAnswer.setAnswer("Clear Hairfall");
         surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
 
@@ -61,7 +61,7 @@ public class SendMessageExample {
 
         surveyAnswer = new SurveyAnswer();
         surveyAnswer.setId(3);
-        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setNotificationUniqueID(notification.getNotificationUniqueID());
         surveyAnswer.setAnswer("Sunsilk Hairfall");
         surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
 
@@ -69,11 +69,12 @@ public class SendMessageExample {
 
         surveyAnswer = new SurveyAnswer();
         surveyAnswer.setId(4);
-        surveyAnswer.setNotificationID(9);
+        surveyAnswer.setNotificationUniqueID(notification.getNotificationUniqueID());
         surveyAnswer.setAnswer("Sunsilk");
         surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
 
         surveyAnswerList.add(surveyAnswer);
+
 
         notification.setNotificationID(AppUtil.SurveyNotification);
         notification.setNotificationName("SurveyNotification");

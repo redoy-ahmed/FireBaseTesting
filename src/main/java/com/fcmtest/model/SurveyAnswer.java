@@ -3,7 +3,7 @@ package com.fcmtest.model;
 public class SurveyAnswer {
 
     public int id;
-    private int notificationID;
+    private int notificationUniqueID;
     private String answer;
     private String answerImagePath;
 
@@ -18,12 +18,12 @@ public class SurveyAnswer {
         this.id = id;
     }
 
-    public int getNotificationID() {
-        return notificationID;
+    public int getNotificationUniqueID() {
+        return notificationUniqueID;
     }
 
-    public void setNotificationID(int notificationID) {
-        this.notificationID = notificationID;
+    public void setNotificationUniqueID(int notificationUniqueID) {
+        this.notificationUniqueID = notificationUniqueID;
     }
 
     public String getAnswer() {

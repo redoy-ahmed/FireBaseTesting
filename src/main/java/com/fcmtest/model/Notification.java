@@ -9,6 +9,7 @@ import java.util.List;
 public class Notification {
 
     private int NotificationID;
+    private int NotificationUniqueID;
     private String NotificationName;
     private String NotificationGenerationType;
     private String NotificationType;
@@ -26,8 +27,9 @@ public class Notification {
     public Notification() {
     }
 
-    public Notification(int NotificationID, String NotificationName, String NotificationGenerationType, String NotificationType, String StartDate, String EndDate, String Caption, String Message, String ImagePath, String PageLink, List<Integer> SkuIds, List<Integer> TpIds, List<String> Times, List<SurveyAnswer> SurveyAnswers) {
+    public Notification(int NotificationID, int NotificationUniqueID, String NotificationName, String NotificationGenerationType, String NotificationType, String StartDate, String EndDate, String Caption, String Message, String ImagePath, String PageLink, List<Integer> SkuIds, List<Integer> TpIds, List<String> Times, List<SurveyAnswer> SurveyAnswers) {
         this.NotificationID = NotificationID;
+        this.NotificationUniqueID = NotificationUniqueID;
         this.NotificationName = NotificationName;
         this.NotificationGenerationType = NotificationGenerationType;
         this.NotificationType = NotificationType;
@@ -50,6 +52,15 @@ public class Notification {
     @JsonProperty("NotificationID")
     public void setNotificationID(int NotificationID) {
         this.NotificationID = NotificationID;
+    }
+
+    public int getNotificationUniqueID() {
+        return NotificationUniqueID;
+    }
+
+    @JsonProperty("NotificationUniqueID")
+    public void setNotificationUniqueID(int notificationUniqueID) {
+        NotificationUniqueID = notificationUniqueID;
     }
 
     public String getNotificationName() {
