@@ -23,6 +23,7 @@ public class Notification {
     private List<Integer> TpIds;
     private List<String> Times;
     private List<SurveyAnswer> SurveyAnswers;
+    private int orderID;
 
     public Notification() {
     }
@@ -178,5 +179,13 @@ public class Notification {
     @JsonProperty("SurveyAnswerList")
     public void setSurveyAnswers(List<SurveyAnswer> SurveyAnswers) {
         this.SurveyAnswers = SurveyAnswers;
+    }
+
+    public int getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
     }
 }

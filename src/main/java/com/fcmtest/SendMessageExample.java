@@ -15,7 +15,8 @@ public class SendMessageExample {
 
         EntityMessage msg = new EntityMessage();
 
-        msg.addRegistrationToken("e6_9Wdj3_9k:APA91bGsmT3at-_UklvEocm0yUU9hnsa3BvRopovi2jTEtAmhp7DtcbLnLB21j-xJ6mggIuNJKd2xnjSsonYiIMU_jwt0vM9lQk9i2P025NWhT87WAjwHw_T2PUSg2hpgOHWB5KaifGn");
+        msg.addRegistrationToken("cI5bfzOrFLQ:APA91bHwCiviB0pS3uosujcNoslo458CAbELi1P_cs5Y_rVy_l_O_qFEJjdcCB6DP1YMZsRMviMp7t2AD4gs3ShuX4PQHzzwh-esF-mJxwA6cXdcIUS6kxXKcdhgAXhMfEDdwIVK-OIX");
+        //msg.addRegistrationToken("dm9T56Jd8Jk:APA91bFPQB7FZ8fVc3Yk9TQZyFNy-wypzpPWH5ipEWGVphiZV7tTMttwV7qpWWWwcmlwbHlNNejdPjKTwi-Z-OztjOQl4tZGUi-opXx3TFlLBlqb80qUJDN13D64vcD43n2IiIcIkYPV");
 
         List<Integer> skuIDs = new ArrayList<>();
         List<Integer> tpIDs = new ArrayList<>();
@@ -23,10 +24,10 @@ public class SendMessageExample {
         List<SurveyAnswer> surveyAnswerList = new ArrayList<>();
 
         Notification notification = new Notification();
-        notification.setNotificationUniqueID(1);
+        notification.setNotificationUniqueID(6);
 
-       /*//Order status notification
-        notification.setNotificationID(AppUtil.OrderConfirmNotification);
+        //Order status notification
+        /*notification.setNotificationID(AppUtil.OrderConfirmNotification);
         notification.setNotificationName("OrderConfirmNotification");
         notification.setNotificationGenerationType("Auto");
         notification.setNotificationType("Push");
@@ -39,11 +40,12 @@ public class SendMessageExample {
         notification.setSkuIds(skuIDs);
         notification.setTpIds(tpIDs);
         notification.setTimes(times);
-        notification.setSurveyAnswers(surveyAnswerList);*/
+        notification.setSurveyAnswers(surveyAnswerList);
+        notification.setOrderID(7768);*/
 
 
         //Survey notification
-        SurveyAnswer surveyAnswer = new SurveyAnswer();
+        /*SurveyAnswer surveyAnswer = new SurveyAnswer();
         surveyAnswer.setId(1);
         surveyAnswer.setNotificationUniqueID(notification.getNotificationUniqueID());
         surveyAnswer.setAnswer("Clear Men");
@@ -73,10 +75,16 @@ public class SendMessageExample {
         surveyAnswer.setAnswer("Sunsilk");
         surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
 
-        surveyAnswerList.add(surveyAnswer);
+        surveyAnswer = new SurveyAnswer();
+        surveyAnswer.setId(5);
+        surveyAnswer.setNotificationUniqueID(notification.getNotificationUniqueID());
+        surveyAnswer.setAnswer("Dove Men");
+        surveyAnswer.setAnswerImagePath("https://logos-download.com/wp-content/uploads/2016/03/Unilever_logotype_emblem_logo.png");
+
+        surveyAnswerList.add(surveyAnswer);*/
 
 
-        notification.setNotificationID(AppUtil.SurveyNotification);
+        /*notification.setNotificationID(AppUtil.SurveyNotification);
         notification.setNotificationName("SurveyNotification");
         notification.setNotificationGenerationType("Auto");
         notification.setNotificationType("InApp");
@@ -89,7 +97,47 @@ public class SendMessageExample {
         notification.setSkuIds(skuIDs);
         notification.setTpIds(tpIDs);
         notification.setTimes(times);
+        notification.setSurveyAnswers(surveyAnswerList);*/
+
+
+        //Daily Notifications Image Only
+
+        /*skuIDs.add(7962);
+
+        notification.setNotificationID(AppUtil.DailyNotificationsImageOnly);
+        notification.setNotificationName("DailyNotificationsImageOnly");
+        notification.setNotificationGenerationType("Auto");
+        notification.setNotificationType("InApp");
+        notification.setStartDate("2020-03-01T00:00:00");
+        notification.setEndDate("2020-03-01T00:00:00");
+        notification.setCaption("অবিশ্বাস্য ছাড়!");
+        notification.setMessage("নাগরিক সংবাদে প্রকাশিত সব ধরনের লেখা, ছবি ও ভিডিও প্রথম আলোর পাঠকেরা স্বতঃস্ফূর্তভাবে নিজ উদ্যোগে পাঠিয়েছেন।");
+        notification.setImagePath("http://www.1face1.com/ht/wp-content/uploads/2017/10/order-online-21-21.png");
+        notification.setPageLink("productdetails");
+        notification.setSkuIds(skuIDs);
+        notification.setTpIds(tpIDs);
+        notification.setTimes(times);
+        notification.setSurveyAnswers(surveyAnswerList);*/
+
+        //Daily Notifications without Image
+
+        skuIDs.add(7962);
+
+        notification.setNotificationID(AppUtil.DailyNotificationsTextOnly);
+        notification.setNotificationName("DailyNotificationsTextOnly");
+        notification.setNotificationGenerationType("Auto");
+        notification.setNotificationType("InApp");
+        notification.setStartDate("2020-03-01T00:00:00");
+        notification.setEndDate("2020-03-01T00:00:00");
+        notification.setCaption("অবিশ্বাস্য ছাড়!");
+        notification.setMessage("নাগরিক সংবাদে প্রকাশিত সব ধরনের লেখা, ছবি ও ভিডিও প্রথম আলোর পাঠকেরা স্বতঃস্ফূর্তভাবে নিজ উদ্যোগে পাঠিয়েছেন।");
+        notification.setImagePath("");
+        notification.setPageLink("productdetails");
+        notification.setSkuIds(skuIDs);
+        notification.setTpIds(tpIDs);
+        notification.setTimes(times);
         notification.setSurveyAnswers(surveyAnswerList);
+
 
         msg.putData("notification", notification);
 
