@@ -23,12 +23,12 @@ public class Notification {
     private List<Integer> TpIds;
     private List<String> Times;
     private List<SurveyAnswer> SurveyAnswers;
-    private int orderID;
+    private int b2bOrderID;
 
     public Notification() {
     }
 
-    public Notification(int NotificationID, int NotificationUniqueID, String NotificationName, String NotificationGenerationType, String NotificationType, String StartDate, String EndDate, String Caption, String Message, String ImagePath, String PageLink, List<Integer> SkuIds, List<Integer> TpIds, List<String> Times, List<SurveyAnswer> SurveyAnswers) {
+    public Notification(int NotificationID, int NotificationUniqueID, String NotificationName, String NotificationGenerationType, String NotificationType, String StartDate, String EndDate, String Caption, String Message, String ImagePath, String PageLink, List<Integer> SkuIds, List<Integer> TpIds, List<String> Times, List<SurveyAnswer> SurveyAnswers, int b2bOrderID) {
         this.NotificationID = NotificationID;
         this.NotificationUniqueID = NotificationUniqueID;
         this.NotificationName = NotificationName;
@@ -44,6 +44,7 @@ public class Notification {
         this.TpIds = TpIds;
         this.Times = Times;
         this.SurveyAnswers = SurveyAnswers;
+        this.b2bOrderID = b2bOrderID;
     }
 
     public int getNotificationID() {
@@ -181,11 +182,11 @@ public class Notification {
         this.SurveyAnswers = SurveyAnswers;
     }
 
-    public int getOrderID() {
-        return orderID;
+    public int getB2bOrderID() {
+        return b2bOrderID;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setB2bOrderID(int b2bOrderID) {
+        this.b2bOrderID = b2bOrderID;
     }
 }
