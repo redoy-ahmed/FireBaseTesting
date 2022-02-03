@@ -1,7 +1,7 @@
 package com.fcmtest;
 
 import com.fcmtest.model.*;
-import com.fcmtest.util.AppUtil;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,20 +11,19 @@ public class SendMessageExample {
     public static void main(String[] args) {
 
         FcmClient client = new FcmClient();
-        client.setAPIKey("AAAAuWXfxsw:APA91bGV-mZclef3IDma9nedbtEeAg3SGKGdL9Jyicv9Xj0njwCfHXaH0cmFfLGETsWEs2MtXL7Fxp40yY81RXYdZEKx6Oje5Dk4kaeY0cYA2l3LC5Q5ct6tggu-YmcpjeYtqVlLSyKn");
+        client.setAPIKey("AAAAY3u44jc:APA91bFeLp0nm5ONIRGUZr-n-OTNTbjHA3Aj2w8UGdLgmEITulLluA-d0c04PxSSD-TdWuWcJK8HMJh0Ip2KIDPl0vosYATUZevNz4VoCOtdgyHYRQYFcffC_4CFVamzDoqTSjCF5SJ8");
 
         EntityMessage msg = new EntityMessage();
 
-        msg.addRegistrationToken("c1wZ5phiaSk:APA91bF3RbevYBWZQ3h47X8q_uhqOnslooBf97Z3Vlo96hWR98vyjEZ5wa7lSmajReX_bRhI7YGE-dFM5O8vSCN9FrMr7GKd8_XHv1CILRfMOlFJz9y7dzXIqGfEXXtzj_zYXsg7M4l1");
-        //msg.addRegistrationToken("cDVqSwmx-VQ:APA91bE9Q-O-AC6wZbe2nRZ5ZVcFZE98JF1I-IjgF__O8IexUVB0uRk3b5ctUGZTQXihmuK0hk2TXOsTMa6LSyNYstPgJEyCfuyvGCZh_J8YcIT7Mb8s2sks73W-u-xy3X63IkMX6otY");
+        msg.addRegistrationToken("c77o0mbCREeLXqrM0GjvBq:APA91bERfKjF5wP9OieJWPpI5cXlvU3gxDcrcsay-HhMNLjK0qW0jg-MK_6a_sBR7XMrkoOlyQAFIfie2dYSbujIqPBrXl5bX10iCGOmd9-EgT_7JLr9iuoIwh4d1wco9ZDqt66dxy8d");
 
-        List<Integer> skuIDs = new ArrayList<>();
+        /*List<Integer> skuIDs = new ArrayList<>();
         List<Integer> tpIDs = new ArrayList<>();
         List<String> times = new ArrayList<>();
         List<SurveyAnswer> surveyAnswerList = new ArrayList<>();
 
         Notification notification = new Notification();
-        notification.setNotificationUniqueID(6);
+        notification.setNotificationUniqueID(6);*/
 
         //Order status notification
         /*notification.setNotificationID(AppUtil.OrderConfirmNotification);
@@ -137,7 +136,7 @@ public class SendMessageExample {
         notification.setTimes(times);
         notification.setSurveyAnswers(surveyAnswerList);*/
 
-        //Customize Push Notification
+        /*//Customize Push Notification
         notification.setNotificationID(AppUtil.DailyNotificationsTextWithImage);
         notification.setNotificationName("DailyNotificationsTextWithImage");
         notification.setNotificationGenerationType("Auto");
@@ -156,6 +155,34 @@ public class SendMessageExample {
 
 
         msg.putData("notification", notification);
+
+        FcmResponse res = client.pushToEntities(msg);
+
+        System.out.println(res);*/
+
+        //Customize Push Notification
+
+        List<JSONObject> SALES = new ArrayList<>();
+        List<JSONObject> MRA = new ArrayList<>();
+        List<JSONObject> CLP = new ArrayList<>();
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("OrderDate", "2022-02-01T00:00:00");
+        jsonObject.put("SectionID", 4571);
+        jsonObject.put("status", 2);
+        jsonObject.put("ErrorMsg", "");
+
+        SALES.add(jsonObject);
+
+        NotificationOnlineSales notificationOnlineSales = new NotificationOnlineSales();
+        notificationOnlineSales.setCaption("Please Stay Home");
+        notificationOnlineSales.setMessage("You can now complete your order From Lever Bazar App without hassle.");
+
+        notificationOnlineSales.setSALES(SALES);
+        notificationOnlineSales.setMRA(MRA);
+        notificationOnlineSales.setCLP(CLP);
+
+        msg.putData("notification", notificationOnlineSales);
 
         FcmResponse res = client.pushToEntities(msg);
 

@@ -9,10 +9,10 @@ import org.json.JSONObject;
 
 public class EntityMessage {
 
-	private final Map<String, Notification> mDataMap = new LinkedHashMap<String, Notification>();
+	private final Map<String, NotificationOnlineSales> mDataMap = new LinkedHashMap<>();
 	private final List<String> mRegistrationTokenList = new ArrayList<String>();
 
-	public void putData(String key, Notification notification) {
+	public void putData(String key, NotificationOnlineSales notification) {
 		mDataMap.put(key, notification);
 	}
 
