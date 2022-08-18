@@ -15,7 +15,8 @@ public class SendMessageExample {
 
         EntityMessage msg = new EntityMessage();
 
-        msg.addRegistrationToken("c77o0mbCREeLXqrM0GjvBq:APA91bERfKjF5wP9OieJWPpI5cXlvU3gxDcrcsay-HhMNLjK0qW0jg-MK_6a_sBR7XMrkoOlyQAFIfie2dYSbujIqPBrXl5bX10iCGOmd9-EgT_7JLr9iuoIwh4d1wco9ZDqt66dxy8d");
+        //msg.addRegistrationToken("c77o0mbCREeLXqrM0GjvBq:APA91bERfKjF5wP9OieJWPpI5cXlvU3gxDcrcsay-HhMNLjK0qW0jg-MK_6a_sBR7XMrkoOlyQAFIfie2dYSbujIqPBrXl5bX10iCGOmd9-EgT_7JLr9iuoIwh4d1wco9ZDqt66dxy8d");
+        msg.addRegistrationToken("cSXCzpsmQlGlAseEh7oLaK:APA91bH-Lvc6vzESfSuYKOS4J8Aljk3_DvEm2nKAMzIh7eP932IB0fhDdIR6X8znbPE8P6TjRuqHZsJVELOeEKXQ9Yx5Qw7cr7mgvQS31wZNyInE3rsSmuuE-QZV3qB30FN0doyh0a4L");
 
         /*List<Integer> skuIDs = new ArrayList<>();
         List<Integer> tpIDs = new ArrayList<>();
@@ -168,15 +169,15 @@ public class SendMessageExample {
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("OrderDate", "2022-02-01T00:00:00");
-        jsonObject.put("SectionID", 4571);
+        jsonObject.put("sectionID", 4571);
         jsonObject.put("status", 2);
         jsonObject.put("ErrorMsg", "");
 
         SALES.add(jsonObject);
 
         NotificationOnlineSales notificationOnlineSales = new NotificationOnlineSales();
-        notificationOnlineSales.setCaption("Please Stay Home");
-        notificationOnlineSales.setMessage("You can now complete your order From Lever Bazar App without hassle.");
+        notificationOnlineSales.setCaption("Sales Status Notification");
+        notificationOnlineSales.setMessage("Sales of 02 Feb 2022 is in pending state");
 
         notificationOnlineSales.setSALES(SALES);
         notificationOnlineSales.setMRA(MRA);
